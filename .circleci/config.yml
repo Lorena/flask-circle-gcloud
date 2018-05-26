@@ -9,4 +9,5 @@ jobs:
       - run: gcloud config set project $GOOGLE_PROJECT_ID
       - checkout
       - run: echo "Building"
+      - run: kubectl
 
