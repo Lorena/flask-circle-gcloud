@@ -9,5 +9,8 @@ jobs:
       - run: gcloud config set project $GOOGLE_PROJECT_ID
       - checkout
       - run: echo "Building"
+      - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
       - run: kubectl get pods
+
+
 
