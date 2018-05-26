@@ -51,3 +51,11 @@ All done!
 
 Now, assuming you've set up the required environment variables on CircleCi, you should be able to commit and push to this repository, and your app will be updated accordingly.
 
+## Required environment variables for CircleCI
+
+Circle will require the following variables:
+- GCLOUD_SERVICE_KEY
+- GOOGLE_CLUSTER_NAME
+- GOOGLE_COMPUTE_ZONE
+- GOOGLE_PROJECT_ID
+
