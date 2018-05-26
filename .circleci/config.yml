@@ -14,7 +14,9 @@ jobs:
       - run: kubectl get pods
       - setup_remote_docker
       - run: gcloud auth configure-docker
-      - run: docker build -t gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1 .
+      - run: docker build -t flask-test .
+      - run: docker tag flask-test gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
+      - run: docker tag flask-test gcr.io/symbolic-axe-205204/flask-test:latest
       - run: docker push gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
       - run: docker push gcr.io/symbolic-axe-205204/flask-test:latest
       - run: kubectl set image deployments/hello-web hello-web=gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
