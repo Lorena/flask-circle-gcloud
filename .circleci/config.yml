@@ -5,8 +5,8 @@ jobs:
       - image: python:3-alpine
     steps:
       - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
-      - run: sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
-      - run: sudo /opt/google-cloud-sdk/bin/gcloud config set project $GCLOUD_PROJECT
+      - run: /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+      - run: /opt/google-cloud-sdk/bin/gcloud config set project $GCLOUD_PROJECT
       - checkout
       - run: echo "Building"
 
