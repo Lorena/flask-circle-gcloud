@@ -16,6 +16,8 @@ jobs:
       - run: gcloud auth configure-docker
       - run: docker build -t gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1 .
       - run: docker push gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
+      - run: docker push gcr.io/symbolic-axe-205204/flask-test:latest
+      - run: kubectl set image deployments/hello-web hello-web=gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
 
 
 
