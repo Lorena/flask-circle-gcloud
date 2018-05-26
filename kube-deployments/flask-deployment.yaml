@@ -1,0 +1,40 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+      app: flask
+
+---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: flask-deployment
+  labels:
+    run: flask-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      containers:
+        - name: flask-test
+          image: gcr.io/symbolic-axe-205204/flask-test:latest
+          ports:
+            - containerPort: 8080
+
