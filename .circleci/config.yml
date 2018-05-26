@@ -12,6 +12,7 @@ jobs:
       - run: gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
       - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
       - run: kubectl get pods
+      - run: docker --version
 
 
 
