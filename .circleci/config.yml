@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
       - run: gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
-      - run: gcloud config set project $GCLOUD_PROJECT
+      - run: gcloud config set project $GOOGLE_PROJECT_ID
       - checkout
       - run: echo "Building"
 
