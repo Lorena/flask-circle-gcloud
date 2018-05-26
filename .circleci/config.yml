@@ -19,7 +19,7 @@ jobs:
       - run: docker tag flask-test gcr.io/symbolic-axe-205204/flask-test:latest
       - run: docker push gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
       - run: docker push gcr.io/symbolic-axe-205204/flask-test:latest
-      - run: kubectl set image deployments/flask-deployment flask-deployment=gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
+      - run: kubectl set image deployments/flask-deployment flask-test=gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
 
 
 
