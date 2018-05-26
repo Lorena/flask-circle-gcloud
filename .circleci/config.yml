@@ -12,7 +12,7 @@ jobs:
       - run: gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
       - run: gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
       - run: kubectl get pods
-      - run: docker build -t gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
+      - run: docker build -t gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1 .
       - run: docker push gcr.io/symbolic-axe-205204/flask-test:$CIRCLE_SHA1
 
 
