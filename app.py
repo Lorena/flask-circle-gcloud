@@ -6,7 +6,7 @@ def hello():
     return 'Hello, world!'
 
 @app.route('/goodbye/<name>')
-def hello_name(name):
+def goodbye_name(name):
     return 'Goodbye, ' + name
 
 @app.route('/hello/<name>')
