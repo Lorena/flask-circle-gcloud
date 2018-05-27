@@ -1,4 +1,4 @@
-# testing
+# Flask project with CircleCI and gcloud
  
 This is a sample project to show how you can use Google Cloud and CircleCI to host apps on
 a Kubernetes cluster.
